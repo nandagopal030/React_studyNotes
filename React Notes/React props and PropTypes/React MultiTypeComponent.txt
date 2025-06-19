@@ -1,0 +1,30 @@
+import './css/App.css'
+import { MultiTypeComponent } from './components/MultiTypeComponent'
+
+  return (
+    <>
+      <MultiTypeComponent   value = {"Hellp"}/>
+       <MultiTypeComponent   value = {11}/>
+        <MultiTypeComponent   value = {true}/>
+    </>
+  )
+}
+
+export default App
+
+MultiTypeComponent.jsx
+
+import PropTypes from "prop-types";
+
+export const MultiTypeComponent = (props) => {
+    return (
+        <div>
+            <h1>The value is {props.value}</h1>
+        </div>
+
+  )
+}
+
+MultiTypeComponent.propTypes = {
+     value:PropTypes.oneOfType([PropTypes.string,PropTypes.number, PropTypes.bool]).isRequired,
+}

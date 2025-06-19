@@ -1,0 +1,305 @@
+app.jsx
+
+import './css/App.css'
+import { ArraySample2 } from './components/ArraySample2'
+import { ArraySample } from './components/ArraySample'
+import { OneOfSample } from './components/OneOfSample'
+import { TwoOfSample } from './components/TwoOfSample'
+import { MultiTypeComponent } from './components/MultiTypeComponent'
+import { FunctionSample } from './components/FunctionSample'
+import { Students } from './components/Students'
+import { Teacher } from './components/Teacher'
+import { ChildComponent } from './components/ChildComponent'
+import { Child2 } from './components/Child2'
+function App() {
+  const items = [
+    {id : 1, name : "item1"},
+    {id : 2, name : "item2"},
+    {id : 3, name : "item2"},
+  ]
+  const click = () =>{
+    alert("Ouch I am clicked by you");
+  }
+
+  return (
+    <>
+      <h1>Hello world</h1> */
+     {/* <Students  name ="nanda" age = {21} ismarried = {false}/> */}
+      <Students  name ="banda" age = {31} ismarried = {true}/>
+      <Students  name ="Raanga" age = {41} ismarried = {true}/> 
+     <Teacher firstname ="nanda" lastname = "gopal" age = {21} rollno = {543} /> 
+      <Teacher />
+      <ChildComponent>
+        <p>THis is a child1 from the ChildComponent</p>
+        <p>This is a child2 from the ChildComponent</p>
+      </ChildComponent>
+      <Child2>
+        <h2>Hello form child2 </h2>
+        <h2>Hello </h2>
+      </Child2> */
+      <ArraySample items = {items}/>
+      <ArraySample2 cosnt items = {items}/>
+      <TwoOfSample color = "black"/> 
+       <MultiTypeComponent   value = {"Hellp"}/>
+       <MultiTypeComponent   value = {11}/>
+      <MultiTypeComponent   value = {true}/> 
+      <FunctionSample handleClick = {click}/>
+   
+    </>
+  )
+}
+
+export default App
+
+
+
+import React from 'react'
+import PropTypes from "prop-types";
+export const FunctionSample = (props) => {
+    const {handleClick} = props;
+  return (
+    <div>
+        This is from funtion sample side
+        <br />
+        <button onClick={handleClick}>click me faster</button>
+    </div>
+  )
+}
+FunctionSample.propTypes = {
+   onClick:PropTypes.func.isRequired
+}
+
+
+
+import PropTypes from "prop-types";
+
+export const MultiTypeComponent = (props) => {
+    return (
+        <div>
+            <h1>The value is {props.value}</h1>
+        </div>
+  )
+}
+
+MultiTypeComponent.propTypes = {
+     value:PropTypes.oneOfType([PropTypes.string,PropTypes.number, PropTypes.bool]).isRequired,
+}
+
+
+
+import PropTypes from "prop-types";
+
+export const TwoOfSample = (props) => {
+    const {color} = props;
+  return (
+    <div style={{color:"blueviolet", margin:"20px", padding: "40px", backgroundColor:color}}>
+     <h1>THis is a h1 elemnet where this kinda proptype is being used {color}</h1>
+    </div> 
+  )
+}
+TwoOfSample.propTypes = {
+    color:PropTypes.oneOf(["red", "green", "blue"]),
+}
+
+
+
+import PropTypes from "prop-types";
+
+export const OneOfSample = (props) => {
+   const {color} = props;
+    return (
+        <div style={{color:"yellow", margin:"20px",padding:"20px",backgroundColor:"Red"}}>
+            <h1>This is the component color which is being passed is {color}</h1>
+        </div>
+    );
+}
+OneOfSample.propTypes = {
+    color:PropTypes.oneOf(["red","green","yellow"]).isRequired,
+}
+
+
+
+
+import PropTypes from "prop-types";
+export const ArraySample2 = (prop) => {
+   const {items} = prop;
+    return (
+        <div>
+            <h3>ArraySample2</h3>
+            <ul>
+                {items.map((item) => (
+                    <li key = {item.key}>{item.name}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}
+
+
+
+
+import PropTypes from "prop-types";
+export const ArraySample = (props) => {
+    const {items} = props;
+  return (
+    <div>
+      <h2>Items List</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.key}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+ArraySample.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+
+
+
+
+
+import React from 'react'
+
+export const Child2 = (props) => {
+  return (
+    <div>{props.children}</div>
+  )
+}
+
+
+
+
+
+
+import PropTypes from 'prop-types';
+
+export const Teacher = (props) => {
+  return (
+    <>
+    <div className='teacher'>
+         <table >
+        <tbody>
+            <tr>
+                <td>First Name :</td>
+                <td>{props.firstname}</td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td>{props.lastname}</td>
+            </tr>
+            <tr>
+                <td>Age :</td>
+                <td>{props.age}</td>
+            </tr>
+            <tr>
+                <td>Roll No :</td>
+                <td>{props.rollno}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </>
+  )
+}
+
+Teacher.propTypes = {
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  age: PropTypes.number,
+  rollno: PropTypes.number,
+};
+Teacher.defaultProps = {
+  firstname: "A",
+  lastname: "B",
+  age: 0,
+  rollno: 0,
+    
+}
+
+
+
+
+import PropTypes from 'prop-types';
+
+export const ChildComponent = (props) => {
+  return (
+    <div>
+        {props.children}
+    </div>
+  )
+}
+ChildComponent.PropTypes = {
+    childern:PropTypes.array
+}
+
+
+
+// import React from "react";
+import PropTypes from "prop-types";
+
+export const Students = (props) => {
+  return (
+    <div className="students">
+      <table>
+        <tbody>
+          <tr>
+            <td>Name</td>
+            <td>{props.name}</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>{props.age}</td>
+          </tr>
+          <tr>
+            <td>Is Married</td>
+            <td>{props.ismarried ? "Yes" : "No"}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+
+Students.propTypes = {
+  name: PropTypes.string,
+  age: PropTypes.number,
+  ismarried: PropTypes.bool,
+};
+
+Students.defaultProps = {
+  name: "No name",
+  age: 0,
+  ismarried: false, // 
+};
+
+
+
+import React from 'react'
+
+export const Header = () => {
+    let customCss = "error";
+    const isLoggedIn = false;
+    const greeting  = isLoggedIn ? <p>Welcome user succesful loggin</p> : <p>Login once again</p>
+    const items = ["apple", "Mango", "leomen", "Dragonfruit"];
+    return (
+    <div>
+        <h1 className='header'>Tutor joes</h1>
+        <p className='solgan'>Learn more and be smart</p>
+        <p className={customCss} style = {{fontSize:"40px"}}> THis is a addition of 25 + 35 = {25 + 35}</p>
+        {greeting}
+        <ul>
+           {items.map((item,index) =>(<li key={index}>{item}</li>))}
+        </ul>
+        
+    </div>
+  )
+}

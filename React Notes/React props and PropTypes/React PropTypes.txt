@@ -1,0 +1,68 @@
+app.jsx
+
+// import { Header } from './components/Header'
+import { Teacher } from './components/Teacher'
+import { Students } from './components/Students'
+import './css/App.css'
+import { ChildComponent } from './components/ChildComponent'
+import { Child2 } from './components/Child2'
+import { ArraySample } from './components/ArraySample'
+function App() {
+  const items = [
+    {id : 1, name : "item1"},
+    {id : 2, name : "item2"},
+    {id : 3, name : "item2"},
+  ]
+
+  return (
+    <>
+      {/* <h1>Hello world</h1> */}
+      {/* <Header /> */}
+      {/* <Students  name ="nanda" age = {21} ismarried = {false}/>
+      <Students  name ="banda" age = {31} ismarried = {true}/>
+      <Students  name ="Raanga" age = {41} ismarried = {true}/> */}
+      {/* <Teacher firstname ="nanda" lastname = "gopal" age = {21} rollno = {543} />
+      <Teacher />
+      <ChildComponent>
+        <p>THis is a child1 from the ChildComponent</p>
+        <p>This is a child2 from the ChildComponent</p>
+      </ChildComponent>
+      <Child2>
+        <h2>Hello form child2 </h2>
+        <h2>Hello </h2>
+      </Child2> */}
+      <ArraySample items = {items}/>
+    </>
+  )
+}
+
+export default App
+
+
+ArraySample.jsx
+
+
+import PropTypes from "prop-types";
+export const ArraySample = (props) => {
+    const {items} = props;
+  return (
+    <div>
+      <h2>Items List</h2>
+      <ul>
+        {items.map((item) => (
+          <li key={item.key}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+ArraySample.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+

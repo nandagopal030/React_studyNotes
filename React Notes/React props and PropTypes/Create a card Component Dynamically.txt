@@ -1,0 +1,241 @@
+Create a card Component and make it as dynamic rendering using react.js
+
+
+
+import PropTypes from "prop-types";
+
+const  UserData = [
+  {
+  name:"nanda",
+  city:"Coimbatore",
+  description: "Mobile App Developer",
+  skills : ["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "NODE-js"],
+  profile :"/images/img1.jpg",
+  status : true,
+},
+{
+  name:"Hari",
+  city:"Vadapalani",
+  description : "Backend Developer",
+  skills : ["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "Express-js"],
+  profile :"/images/img2.jpg",
+  status : false,
+},
+{
+  name:"Bumrah",
+  city:"Pune",
+  description : "UI/UX",
+  skills : ["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "Mongo-db"],
+  profile:"/images/img1.jpg",
+  status : true,
+},
+{
+  name:"james",
+  city:"Bombay",
+  description : "UI/UX",
+  skills : ["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "Mongo-db"],
+  profile:"/images/img4.jpg",
+  status : false,
+},
+{
+  name:"Ram",
+  city:"Dubai",
+  description : "Manager",
+  skills : ["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "Mongo-db"],
+  profile:"/images/img4.jpg",
+  status : true,
+},
+{
+  name:"Sham",
+  city:"Kolkata",
+  description : "Pune",
+  skills : ["UI/IX", "Front-End-Developers", "CSS", "JAVA", "REACT", "Mongo-db"],
+  profile:"/images/img4.jpg",
+  status : false,
+}
+]
+
+function User(props){
+    return (
+    <div className="card-container">
+        <span className={props.status ? "pro online" : "pro offline"}> 
+          {props.status ? "ONLINE" : "OFFLINE"}
+        </span>
+        <img className="img" style={{height: "200px", width: "150px"}} src= {props.profile} alt="" />
+        <h3>{props.name}</h3>
+        <h2>{props.city}</h2>
+        <p>{props.description}</p>
+        <div className="buttons">
+            <button className="primary">Message</button>
+            <button className="primary outline">Following</button>
+        </div>
+        <div className="skills">
+          <h6>Skills</h6>
+          <ul>
+            {props.skills.map((skill,index) => (
+                 <li key = {index}>{skill}</li>
+            )
+            )}
+          </ul>
+        </div>
+    </div>)
+}
+
+export const UserCard = () => {
+  return (
+    <>
+      {UserData.map((user, index) => (
+        <User
+          key={index}
+          name={user.name}
+          city={user.city}
+          description={user.description}
+          skills={user.skills}
+          profile={user.profile}
+          status={user.status}
+        />
+      ))}
+    </>
+  );
+};
+
+// name = "james" city ="Chennai" description = "FrontEnd-Developer" 
+//     skills = {["UI/IX", "Front-End-Developers", "HTML", "CSS", "JAVA", "REACT", "NODE"]}
+//     profile="/images/img1.jpg"  status = {true}
+
+User.propTypes = {
+  name: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+  profile:PropTypes.string.isRequired,
+  status: PropTypes.bool.isRequired
+
+
+}
+
+
+
+index.css
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Inter';
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 0;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+h3{
+  margin: 10px 0;
+}
+h2{
+  margin: 10px 0;
+  font-weight: 500;
+}
+h6{
+  text-transform: uppercase;
+}
+p{
+  text-align: center;
+  line-height: 21px;
+  font-size: 14px;
+}
+.card-container{
+  padding-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px -20px #000000;
+  background-color: #353b48;
+  color: azure;
+  text-align: center;
+  width: 350px;
+  max-width: 100%;
+  position: relative;
+  margin: 20px;
+}
+.pro{
+  position: absolute;
+  color: #353b48;
+  background-color: red;
+  width: 60px;
+  top: 10px;
+  left: 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.online{
+  background-color: greenyellow;
+}
+.offline{
+  background-color: red;
+}
+.img{
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 4px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+button.primary{
+  background-color: #0984e3;
+  color: aliceblue;
+  border-radius: 3px;
+  border: 1px solid #0984e3;
+  padding: 10px 25px;
+  font-family: 'Inter';
+  font-weight: 500;
+}
+button.primary.outline{
+ background-color: transparent;
+}
+.skills{
+  background-color: #2f3640 ;
+  text-align: left;
+  padding: 10px;
+  margin-top: 12px;
+}
+.skills ul{
+  list-style-type: none;
+  font-size: 13px;
+  margin: 10;
+  padding: 0;
+}
+.skills ul li{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+main.jsx
+
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import { UserCard } from './UserCard'
+// import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    {/* <App /> */}
+    <UserCard />
+  </StrictMode>,
+)
+
+
+

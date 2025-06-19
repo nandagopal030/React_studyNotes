@@ -1,0 +1,70 @@
+App.jsx
+
+// import { Header } from './components/Header'
+import { Teacher } from './components/Teacher'
+import { Students } from './components/Students'
+import './css/App.css'
+function App() {
+
+  return (
+    <>
+      {/* <h1>Hello world</h1> */}
+      {/* <Header /> */}
+      {/* <Students  name ="nanda" age = {21} ismarried = {false}/>
+      <Students  name ="banda" age = {31} ismarried = {true}/>
+      <Students  name ="Raanga" age = {41} ismarried = {true}/> */}
+      <Teacher firstname ="nanda" lastname = "gopal" age = {21} rollno = {543} />
+      <Teacher />
+    </>
+  )
+}
+
+export default App
+
+Teacher.jsx
+
+
+import PropTypes from 'prop-types';
+
+export const Teacher = (props) => {
+  return (
+    <>
+    <div className='teacher'>
+         <table >
+        <tbody>
+            <tr>
+                <td>First Name :</td>
+                <td>{props.firstname}</td>
+            </tr>
+            <tr>
+                <td>Last Name :</td>
+                <td>{props.lastname}</td>
+            </tr>
+            <tr>
+                <td>Age :</td>
+                <td>{props.age}</td>
+            </tr>
+            <tr>
+                <td>Roll No :</td>
+                <td>{props.rollno}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </>
+  )
+}
+
+Teacher.propTypes = {
+  firstname: PropTypes.string,
+  lastname: PropTypes.string,
+  age: PropTypes.number,
+  rollno: PropTypes.number,
+};
+Teacher.defaultProps = {
+  firstname: "A",
+  lastname: "B",
+  age: 0,
+  rollno: 0,
+    
+}
