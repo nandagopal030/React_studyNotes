@@ -1,0 +1,181 @@
+import { useState } from "react";
+
+export const QrCode = () => {
+  const [img, setImg] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [qrdata, setQrdata] = useState("https://google.com");
+  const [qrsize, setQrsize] = useState("150");
+
+  function downloadQR() {
+    fetch(img)
+      .then(res => res.blob())
+      .then(blob => {
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "qrcode.png";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      })
+      .catch(err => console.error("Download error:", err));
+  }
+
+  async function generateQr() {
+    setLoading(true);
+    try {
+      const url = `https://api.qrserver.com/v1/create-qr-code/?size=${qrsize}x${qrsize}&data=${encodeURIComponent(qrdata)}`;
+      console.log(url);
+      setImg(url);
+    } catch (error) {
+      console.error("QR generation error:", error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="app-container">
+      <h1>QR Code Generator</h1>
+      {img && (
+        <img
+          src={img}
+          className="qr-code-img"
+          style={{ height: "200px", width: "200px" }}
+          alt="QR Code"
+        />
+      )}
+      {loading && <p>The image is loading, please wait...</p>}
+      <div>
+        <label htmlFor="dataInput" className="input-label">
+          Data for QR Code:
+        </label>
+        <input
+          type="text"
+          value={qrdata}
+          id="dataInput"
+          placeholder="Enter the QR Code"
+          onChange={(e) => setQrdata(e.target.value)}
+        />{" "}
+        <br />
+        <label htmlFor="sizeInput" className="input-label">
+          Image size (e.g., 150):
+        </label>
+        <input
+          type="text"
+          value={qrsize}
+          id="sizeInput"
+          placeholder="Enter the size of the image"
+          onChange={(e) => setQrsize(e.target.value)}
+        />
+        <button onClick={generateQr} disabled={loading} className="generate-button">
+          Generate QR Code
+        </button>
+        <button onClick={downloadQR} className="download-button">
+          Download QR Code
+        </button>
+      </div>
+      <p className="footer">
+        Designed by <a href="https://www.google.com">Nanda</a>
+      </p>
+    </div>
+  );
+};
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+   font-family: 'Inter';
+}
+.app-container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.app-container h1{
+     color: blueviolet;
+     font-weight: 600;
+     font-size: 20px;
+     border-bottom: 2px solid rgb(220, 220, 220);
+     padding: 5px;
+}
+.qr-code-img{
+    padding:5px;
+    box-shadow:  0 0 10px rgba(0, o, 0, 102);
+}
+.input-label{
+    display: block;
+    color: blueviolet;
+    font-size: 20px;
+    font-weight: 300;
+    margin-left: 15px;
+}
+input[type = "text"]{
+padding: 10px;
+margin: 10px;
+width: 100%;
+font-size: 10px;
+font-weight: 200;
+border: 1px solid black;
+}
+button{
+    padding: 15px 20px;
+    font-size: 18px;
+    color: aliceblue;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+.generate-button{
+    background-color: blueviolet;  
+    border-radius: 8px; 
+    
+}
+.generate-button:disabled{
+    cursor: not-allowed;
+}
+.download-button{
+    padding-left: 10px;
+    background-color: green;
+    border-radius: 8px;
+}
+.download-button:hover{
+    background-color: rgb(0, 200, 0);
+}
+.footer{
+    margin-top: 10px;
+
+}
+.footer a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+//react main imports
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
+
+//css imports
+import './css/QrCode.css'
+// import './index.css'
+
+//Componets imports
+// import { UserCard } from './UserCard'
+import { QrCode } from './QrCode'
+// import App from './App.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    {/* <App /> */}
+    {/* <UserCard /> */}
+    <QrCode />
+  </StrictMode>,
+)
+
