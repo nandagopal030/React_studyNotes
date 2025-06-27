@@ -1,0 +1,45 @@
+.header{
+  color: rgb(255, 0, 212);
+}
+.solgan{
+    color:blueviolet
+}
+.code{
+  color: rgb(0, 229, 149);
+}
+.error{
+  color: red;
+}
+
+.students table{
+    border: 2px solid gray;
+   border-collapse: collapse;
+   width: 200px;
+   height: 100px;
+  margin-top: 10px;
+}
+.students table td,
+.students table th{
+  text-align: left;
+  border: 2px solid rgb(235, 235, 235);
+  padding: 5px 10px; 
+}
+.students table th{
+  width: 100px;
+}
+.teachers table{
+    border: 2px solid gray;
+   border-collapse: collapse;
+   width: 200px;
+   height: 100px;
+  margin-top: 10px;
+}
+.teachers table td,
+.teachers table th{
+  text-align: left;
+  border: 2px solid rgb(235, 235, 235);
+  padding: 5px 10px; 
+}
+.teachers table th{
+  width: 100px;
+}

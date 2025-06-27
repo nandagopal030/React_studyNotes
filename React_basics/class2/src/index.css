@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Inter';
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 0;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+h3{
+  margin: 10px 0;
+}
+h2{
+  margin: 10px 0;
+  font-weight: 500;
+}
+h6{
+  text-transform: uppercase;
+}
+p{
+  text-align: center;
+  line-height: 21px;
+  font-size: 14px;
+}
+.card-container{
+  padding-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px -20px #000000;
+  background-color: #353b48;
+  color: azure;
+  text-align: center;
+  width: 350px;
+  max-width: 100%;
+  position: relative;
+  margin: 20px;
+}
+.pro{
+  position: absolute;
+  color: #353b48;
+  background-color: red;
+  width: 60px;
+  top: 10px;
+  left: 30px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.online{
+  background-color: greenyellow;
+}
+.offline{
+  background-color: red;
+}
+.img{
+  border-radius: 50%;
+  border: 3px solid white;
+  padding: 4px;
+}
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+button.primary{
+  background-color: #0984e3;
+  color: aliceblue;
+  border-radius: 3px;
+  border: 1px solid #0984e3;
+  padding: 10px 25px;
+  font-family: 'Inter';
+  font-weight: 500;
+}
+button.primary.outline{
+ background-color: transparent;
+}
+.skills{
+  background-color: #2f3640 ;
+  text-align: left;
+  padding: 10px;
+  margin-top: 12px;
+}
+.skills ul{
+  list-style-type: none;
+  font-size: 13px;
+  margin: 10;
+  padding: 0;
+}
+.skills ul li{
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 2px;
+}

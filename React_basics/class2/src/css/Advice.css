@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+      font-family: "Inter", sans-serif;
+
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Only if you're sure no scroll is needed */
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-color: #ff7675;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+div{
+    color: #fff;
+}
+div h3{
+    font-size: 30px;
+    font-weight: 600;
+}
+div button{
+    color: #fff;
+    background-color: #6c5ce7;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px
+}
