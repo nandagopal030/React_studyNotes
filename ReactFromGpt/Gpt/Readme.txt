@@ -1,0 +1,1 @@
+React form Gpt contains one single prompt of code extracts all the form of nessasary code for me and the prompt 

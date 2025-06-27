@@ -1,0 +1,27 @@
+
+.form {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="email"],
+.form input[type="tel"] {
+  padding: 8px;
+  width: 100%;
+  margin: 5px 0;
+}
+.form label {
+  display: block;
+  margin-top: 10px;
+}
+.form button {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
