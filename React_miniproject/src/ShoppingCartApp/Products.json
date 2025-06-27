@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "name": "Bluetooth Speaker",
+    "amt": 1999,
+    "shop": "SoundHub",
+    "ftype": "Electronics",
+    "pic": "https://picsum.photos/200?random=1",
+    "latest": true
+  },
+  {
+    "id": 2,
+    "name": "Running Shoes",
+    "amt": 2499,
+    "shop": "ShoeMart",
+    "ftype": "Footwear",
+    "pic": "https://picsum.photos/200?random=2",
+    "latest": false
+  },
+  {
+    "id": 3,
+    "name": "Wrist Watch",
+    "amt": 1099,
+    "shop": "TimeSquare",
+    "ftype": "Accessories",
+    "pic": "https://picsum.photos/200?random=3",
+    "latest": true
+  },
+  {
+    "id": 4,
+    "name": "Backpack",
+    "amt": 1799,
+    "shop": "BagZone",
+    "ftype": "Bags",
+    "pic": "https://picsum.photos/200?random=4",
+    "latest": false
+  },
+  {
+    "id": 5,
+    "name": "Denim Jeans",
+    "amt": 1299,
+    "shop": "StylePoint",
+    "ftype": "Clothing",
+    "pic": "https://picsum.photos/200?random=5",
+    "latest": true
+  },
+  {
+    "id": 6,
+    "name": "Wireless Mouse",
+    "amt": 699,
+    "shop": "GadgetKing",
+    "ftype": "Electronics",
+    "pic": "https://picsum.photos/200?random=6",
+    "latest": true
+  },
+  {
+    "id": 7,
+    "name": "Cotton T-Shirt",
+    "amt": 499,
+    "shop": "StylePoint",
+    "ftype": "Clothing",
+    "pic": "https://picsum.photos/200?random=7",
+    "latest": false
+  },
+  {
+    "id": 8,
+    "name": "Smartphone Stand",
+    "amt": 299,
+    "shop": "GadgetKing",
+    "ftype": "Electronics",
+    "pic": "https://picsum.photos/200?random=8",
+    "latest": true
+  },
+  {
+    "id": 9,
+    "name": "Sunglasses",
+    "amt": 899,
+    "shop": "UrbanStyle",
+    "ftype": "Accessories",
+    "pic": "https://picsum.photos/200?random=9",
+    "latest": false
+  },
+  {
+    "id": 10,
+    "name": "Lunch Box",
+    "amt": 599,
+    "shop": "KitchenPro",
+    "ftype": "Kitchen",
+    "pic": "https://picsum.photos/200?random=10",
+    "latest": true
+  },
+  {
+    "id": 11,
+    "name": "Laptop Sleeve",
+    "amt": 999,
+    "shop": "TechStore",
+    "ftype": "Electronics",
+    "pic": "https://picsum.photos/200?random=11",
+    "latest": true
+  },
+  {
+    "id": 12,
+    "name": "Formal Shirt",
+    "amt": 799,
+    "shop": "StylePoint",
+    "ftype": "Clothing",
+    "pic": "https://picsum.photos/200?random=12",
+    "latest": false
+  },
+  {
+    "id": 13,
+    "name": "Travel Mug",
+    "amt": 499,
+    "shop": "KitchenPro",
+    "ftype": "Kitchen",
+    "pic": "https://picsum.photos/200?random=13",
+    "latest": false
+  },
+  {
+    "id": 14,
+    "name": "Wireless Charger",
+    "amt": 1199,
+    "shop": "GadgetKing",
+    "ftype": "Electronics",
+    "pic": "https://picsum.photos/200?random=14",
+    "latest": true
+  },
+  {
+    "id": 15,
+    "name": "Leather Wallet",
+    "amt": 699,
+    "shop": "UrbanStyle",
+    "ftype": "Accessories",
+    "pic": "https://picsum.photos/200?random=15",
+    "latest": false
+  },
+  {
+    "id": 16,
+    "name": "Portable Fan",
+    "amt": 349,
+    "shop": "CoolGears",
+    "ftype": "Home",
+    "pic": "https://picsum.photos/200?random=16",
+    "latest": true
+  },
+  {
+    "id": 17,
+    "name": "Office Chair",
+    "amt": 4999,
+    "shop": "FurniKart",
+    "ftype": "Furniture",
+    "pic": "https://picsum.photos/200?random=17",
+    "latest": false
+  },
+  {
+    "id": 18,
+    "name": "Yoga Mat",
+    "amt": 999,
+    "shop": "FitStore",
+    "ftype": "Fitness",
+    "pic": "https://picsum.photos/200?random=18",
+    "latest": true
+  },
+  {
+    "id": 19,
+    "name": "Hair Dryer",
+    "amt": 1499,
+    "shop": "BeautyKart",
+    "ftype": "Beauty",
+    "pic": "https://picsum.photos/200?random=19",
+    "latest": false
+  },
+  {
+    "id": 20,
+    "name": "Notebook Set",
+    "amt": 299,
+    "shop": "StationeryWorld",
+    "ftype": "Stationery",
+    "pic": "https://picsum.photos/200?random=20",
+    "latest": false
+  }
+]
