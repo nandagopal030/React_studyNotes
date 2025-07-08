@@ -1,0 +1,2 @@
+This whole code contains the Static form data where some fileds data was being handled dynamically.
+This contains the dropdown, checkboc, Radio buttons dynamcially and the input fields does not contain any form of dynamic rendering
