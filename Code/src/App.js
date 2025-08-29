@@ -19,9 +19,10 @@ import styles from './appStyles.module.css'
 // import CounterOne from './react_hooks_from_playlist_44/useReducer/CounterOne';
 // import CounterTwo from './react_hooks_from_playlist_44/useReducer/CounterTwo';
 // import CounterThree from './react_hooks_from_playlist_44/useReducer/CounterThree';
-import ComponentA from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentA';
-import ComponentB from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentB';
-import ComponentC from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentC';
+// import ComponentA from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentA';
+// import ComponentB from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentB';
+// import ComponentC from './react_hooks_from_playlist_44/useReducer/useReducer with useContext/ComponentC';
+import DataFetchingOne from './react_hooks_from_playlist_44/useReducer/fetching data with useReducer/DataFetchingOne';
 // import FunctionalArrayHooks from './react_hooks_from_playlist_44/statehooks/FunctionalArrayHooks';
 // import DataFetching from './react_hooks_from_playlist_44/useeffecthooks/DataFetching';
 // import './appStyles.css';
@@ -56,7 +57,7 @@ const reducer = (state, action) => {
 }
 export const CountContext = React.createContext();
 function App() {
-  const [count, dispatch] = useReducer(reducer, initialState)
+  // const [count, dispatch] = useReducer(reducer, initialState)
 
   return (
     <div className='App'>
@@ -85,13 +86,14 @@ function App() {
       {/* <CounterThree /> */}
 
       {/* nested component A - F and useReducer with useContext */}
-      <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
+      {/* <CountContext.Provider value={{ countState: count, countDispatch: dispatch }}>
         Count - {count}
         <ComponentA />
         <ComponentB />
         <ComponentC />
-      </CountContext.Provider>
+      </CountContext.Provider> */}
 
+      <DataFetchingOne />
 
       {/* <Greet name ="Ram" heroName ="Developer" >
    <ParentComponents />
